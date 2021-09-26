@@ -3,11 +3,33 @@ https://youtu.be/F2JCjVSZlG0
 React / Typescript Tutorial - Build a Quiz App
 
 Next Version:
-* 2 persons can play and compare they results for the same quiz
-* when both finishes, they see the results
-    * improvement: the results could be by category
-    * Next Version:
-        * they can see the results and each could review the questions with their and the oponent results
+(A) 2 persons can play and compare they results for the same quiz
+    * when both finishes, they see the results
+        * improvement: the results could be by category
+        * Next Version:
+            * they can see the results and each could review the questions with their and the oponent results
+
+
+Now on:
+(A)
+- user access app' url
+- user fills name and specific code
+- server checks if code is ok
+- server sum up +1 into connectedUsers variable
+- server checks if there are less than 2 (0, 1) users connected - only 2 will be allowed
+    - if there is 0 -> show a waiting for the opponent' info
+    - if there is 1 -> start the game for both
+- users plays until answer the last question
+    - a msg is sent to the server with user' name and score / NOT NOW -> array of answers
+    - server checks if the other opponnent already finished (boolean)
+        - if false, send this variable = false
+            - show a waiting for the opponent' info
+            - wait for refresh
+        - if true, send this variable = false & 2 arrays with name, score
+            - send to both users
+- users sees the scores
+- when finishes
+    - renew the server variables and delete temp infos (name, score)
 
 
 
